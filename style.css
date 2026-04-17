@@ -20,3 +20,15 @@ body {
     align-items: center;
     color: var(--text-white);
 }
+
+#app {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px); /* Glas-Effekt */
+    width: 90%;
+    max-width: 400px;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
