@@ -67,3 +67,14 @@ header h2 {
     font-weight: bold;
     cursor: pointer;
 }
+
+/* 7. WETTER-ANZEIGE */
+.weather-info h1 {
+    font-size: 2rem;
+}
+
+#temp-display {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
