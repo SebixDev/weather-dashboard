@@ -42,3 +42,28 @@ header h2 {
     margin-bottom: 1.5rem;
     font-weight: 300;
 }
+
+/* 6. SUCHBOX */
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.search-box button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    cursor: pointer;
+}
