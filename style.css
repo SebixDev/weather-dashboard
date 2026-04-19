@@ -1,9 +1,11 @@
+/* 1. STEUERZENTRALE */
 :root {
     --primary-color: #06283D;
     --accent-color: #00d2ff;
     --text-white: #ffffff;
 }
 
+/* 2. UNIVERSAL-RESET */
 * {
     margin: 0;
     padding: 0;
@@ -11,12 +13,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-:root {
-    --primary-color: #06283D;
-    --accent-color: #00d2ff;
-    --text-white: #ffffff;
-}
-
+/* 3. HINTERGRUND */
 body {
     background-color: var(--primary-color);
     background: linear-gradient(135deg, #06283d 0%, #136a8a 100%);
@@ -27,9 +24,10 @@ body {
     color: var(--text-white);
 }
 
+/* 4. DIE APP-KARTE */
 #app {
     background: var(--card-bg);
-    backdrop-filter: blur(10px); /* Glas-Effekt */
+    backdrop-filter: blur(10px);
     width: 90%;
     max-width: 400px;
     padding: 2rem;
@@ -37,4 +35,10 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 5. TITEL */
+header h2 {
+    margin-bottom: 1.5rem;
+    font-weight: 300;
 }
