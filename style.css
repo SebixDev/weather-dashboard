@@ -78,3 +78,19 @@ header h2 {
     font-weight: bold;
     margin: 10px 0;
 }
+
+/* 8. RESPONSIVE DESIGN (Für Handys) */
+@media (max-width: 450px) {
+    #app {
+        width: 95%;
+        padding: 1.5rem;
+    }
+
+    #temp-display {
+        font-size: 3rem;
+    }
+
+    .weather-info h1 {
+        font-size: 1.5rem;
+    }
+}
