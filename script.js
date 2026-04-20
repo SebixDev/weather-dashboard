@@ -1,7 +1,9 @@
-// Bausteine aus dem HTML ins JavaScript geholt 
+/* 1. VARIABLEN (Zutaten & Adressen) */
+const apiKey = "DEIN_API_KEY_HIER";
+const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
 const searchInput = document.querySelector(".search-box input");
 const searchButton = document.querySelector(".search-box button");
-const tempDisplay = document.querySelector("#temp-display");
 
 // Button-Eventlistener hinzugefügt
 searchButton.addEventListener("click", () => {
