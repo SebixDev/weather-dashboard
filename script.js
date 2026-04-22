@@ -5,12 +5,6 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q="
 const searchInput = document.querySelector(".search-box input");
 const searchButton = document.querySelector(".search-box button");
 
-// Button-Eventlistener hinzugefügt
-searchButton.addEventListener("click", () => {
-    console.log("Button wurde geklickt!");
-    alert("Suche gestartet für: " + searchInput.value);
-});
-
 /* 2. FUNKTIONEN (Die Baupläne) */
 async function checkWeather(city) {
     // Der Code schickt eine Anfrage an den Wetter-Server und wartet, bis das Datenpaket zurückkommt:
@@ -27,3 +21,17 @@ async function checkWeather(city) {
     document.querySelector("#temp-display").innerHTML = Math.round(data.main.temp) + "°C";
     document.querySelector("#description").innerHTML = data.weather[0].description;
 }
+
+/* 3. EVENTS (Der Startschuss) */
+
+// Wenn man auf die Lupe/den Button klickt
+searchButton.addEventListener("click", () => {
+    checkWeather(searchInput.value);
+});
+
+// Wenn man im Textfeld die Enter-Taste drückt
+searchInput.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        checkWeather(searchInput.value);
+    }
+});
