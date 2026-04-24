@@ -39,10 +39,10 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 
 - [x] Grundlegendes HTML/CSS Design
 - [x] JavaScript API-Anbindung
-- [x] Dynamische Hintergründe
+- [ ] Dynamische Hintergründe
 - [ ] Detaillierte Wetter-Icons einbauen
 - [ ] Vorhersage für die nächsten 5 Tage hinzufügen
 - [ ] Standort-Autovervollständigung
 
 ---
-*Erstellt von SebixDev als Teil eines Web-Development Projekts.*
+*Erstellt als Teil eines Lern-Projekts.*
