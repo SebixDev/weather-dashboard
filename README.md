@@ -2,12 +2,12 @@
 
 Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeatherMap API abruft und das Design dynamisch an die Wetterlage anpasst.
 
-## 🚀 Funktionen (Stand jetzt)
+## 🚀 Funktionen (Stand 24.04.2026)
 
 * **Echtzeit-Wetterdaten:** Abruf von Temperatur, Stadtname und Wetterbeschreibung über die OpenWeatherMap API.
 * **Dynamisches Design:** Der Hintergrund der Website ändert sich automatisch (Gradients) basierend auf der Wetterlage (z.B. sonnig, bewölkt, Regen).
 * **Interaktive Suche:** Suche nach Städten per Klick auf den Button oder einfach durch Drücken der **Enter-Taste**.
-* **Fehlerbehandlung:** Einfache Prüfung, ob eine Stadt existiert (Error 404 Handling).
+* **Fehlerbehandlung:** Einfache Prüfung, ob eine Stadt existiert.
 * **Responsive UI:** Mit CSS gestaltetes Dashboard, das auf verschiedenen Bildschirmgrößen funktioniert.
 
 ## 🛠️ Tech-Stack
@@ -25,15 +25,6 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 * `/images` - Ordner für die Wetter-Icons (clouds, clear, rain, etc.).
 
 ## 🔧 Installation & Setup
-
-1.  **Projekt klonen:**
-    ```bash
-    git clone [https://github.com/SebixDev/weather-dashboard.git](https://github.com/SebixDev/weather-dashboard.git)
-    ```
-2.  **API-Key eintragen:**
-    Öffne die `script.js` und füge deinen persönlichen API-Key in die Variable `apiKey` ein.
-3.  **Starten:**
-    Öffne die `index.html` in deinem Browser (z.B. mit dem VS Code "Live Server").
 
 ## 📝 Geplante Updates (To-Do)
 
