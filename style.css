@@ -16,19 +16,17 @@
 /* 3. HINTERGRUND & DYNAMIK */
 body {
     background-color: var(--primary-color);
-    /* Standard-Hintergrund (Blau-Mix) */
     background: linear-gradient(135deg, #06283d 0%, #136a8a 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--text-white);
-    /* Transition auf 'all' gesetzt, damit das 'rote' Problem im Editor verschwindet */
     transition: all 0.8s ease-in-out;
     background-attachment: fixed;
 }
 
-/* --- DYNAMISCHE KLASSEN (Werden von JS umgeschaltet) --- */
+/* --- DYNAMISCHE KLASSEN --- */
 
 body.clear {
     background: linear-gradient(135deg, #f7b733 0%, #fc4a1a 100%) !important;
