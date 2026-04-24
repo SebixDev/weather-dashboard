@@ -13,15 +13,37 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* 3. HINTERGRUND */
+/* 3. HINTERGRUND & DYNAMIK */
 body {
     background-color: var(--primary-color);
+    /* Standard-Hintergrund (Blau-Mix) */
     background: linear-gradient(135deg, #06283d 0%, #136a8a 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--text-white);
+    /* Transition auf 'all' gesetzt, damit das 'rote' Problem im Editor verschwindet */
+    transition: all 0.8s ease-in-out;
+    background-attachment: fixed;
+}
+
+/* --- DYNAMISCHE KLASSEN (Werden von JS umgeschaltet) --- */
+
+body.clear {
+    background: linear-gradient(135deg, #f7b733 0%, #fc4a1a 100%) !important;
+}
+
+body.clouds {
+    background: linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%) !important;
+}
+
+body.rain {
+    background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%) !important;
+}
+
+body.snow {
+    background: linear-gradient(135deg, #e6dada 0%, #274046 100%) !important;
 }
 
 /* 4. DIE APP-KARTE */
