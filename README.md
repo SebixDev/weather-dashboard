@@ -24,8 +24,6 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 * `script.js` - Die Logik (API-Abruf, Event-Listener, UI-Updates).
 * `/images` - Ordner für die Wetter-Icons (clouds, clear, rain, etc.).
 
-## 🔧 Installation & Setup
-
 ## 📝 Geplante Updates (To-Do)
 
 - [x] Grundlegendes HTML/CSS Design
@@ -34,6 +32,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [ ] Detaillierte Wetter-Icons einbauen
 - [ ] Vorhersage für die nächsten 5 Tage hinzufügen
 - [ ] Standort-Autovervollständigung
+- [ ] Readme.md verbessern und updaten
 
 ---
 *Erstellt als Teil eines Lern-Projekts.*
