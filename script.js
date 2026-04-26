@@ -28,13 +28,13 @@ async function checkWeather(city) {
     document.querySelector("#description").innerHTML = data.weather[0].description;
 
     // --- B: DYNAMISCHES DESIGN (HINTERGRUND) ---
-    // Wir holen den Wetter-Typ (z.B. "Clouds", "Clear", "Rain")
+    // Wetter-Typ "holen" (z.B. "Clouds", "Clear", "Rain")
     const weatherMain = data.weather[0].main.toLowerCase();
 
-    // Zuerst alle alten Klassen entfernen, damit sie sich nicht stapeln
+    // Alle alten Klassen entfernen, damit sie sich nicht stapeln
     document.body.classList.remove("clear", "clouds", "rain", "snow");
 
-    // Jetzt die passende Klasse hinzufügen
+    // Klassen hinzufügen
     if (weatherMain === "clear") {
         document.body.classList.add("clear");
     } else if (weatherMain === "clouds") {
@@ -53,7 +53,7 @@ searchButton.addEventListener("click", () => {
     checkWeather(searchInput.value);
 });
 
-// Textfeld: Enter-Taste 
+// Textfeld: Enter-Taste
 searchInput.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
         checkWeather(searchInput.value);
