@@ -4,56 +4,50 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q="
 
 const searchInput = document.querySelector(".search-box input");
 const searchButton = document.querySelector(".search-box button");
+const weatherIcon = document.querySelector(".weather-icon");
 
-/* 2. FUNKTIONEN */
+/* 2. HAUPTFUNKTION */
 async function checkWeather(city) {
-    // Anfrage an den Wetter-Server
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     
-    // Fehler abfangen, falls die Stadt nicht existiert
     if (response.status == 404) {
         alert("Stadt nicht gefunden!");
         return;
     }
 
-    // Paket in ein lesbares Format (JSON) umgewandelt
     var data = await response.json();
 
-    // Paket in der Browser-Konsole (F12) anzeigen
-    console.log(data);
-
-    // --- A: TEXT-DATEN AKTUALISIEREN ---
+    // A: Texte füllen
     document.querySelector("#city-name").innerHTML = data.name;
     document.querySelector("#temp-display").innerHTML = Math.round(data.main.temp) + "°C";
     document.querySelector("#description").innerHTML = data.weather[0].description;
 
-    // --- B: DYNAMISCHES DESIGN (HINTERGRUND) ---
-    // Wetter-Typ "holen" (z.B. "Clouds", "Clear", "Rain")
+    // B: Wetter-Typ bestimmen
     const weatherMain = data.weather[0].main.toLowerCase();
 
-    // Alle alten Klassen entfernen, damit sie sich nicht stapeln
+    // C: Hintergrund & Icon umschalten
     document.body.classList.remove("clear", "clouds", "rain", "snow");
 
-    // Klassen hinzufügen
     if (weatherMain === "clear") {
         document.body.classList.add("clear");
+        weatherIcon.src = "images/clear.png";
     } else if (weatherMain === "clouds") {
         document.body.classList.add("clouds");
+        weatherIcon.src = "images/clouds.png";
     } else if (weatherMain === "rain" || weatherMain === "drizzle") {
         document.body.classList.add("rain");
+        weatherIcon.src = "images/rain.png";
     } else if (weatherMain === "snow") {
         document.body.classList.add("snow");
+        weatherIcon.src = "images/snow.png";
     }
 }
 
 /* 3. EVENTS */
-
-// Button-Klick
 searchButton.addEventListener("click", () => {
     checkWeather(searchInput.value);
 });
 
-// Textfeld: Enter-Taste
 searchInput.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
         checkWeather(searchInput.value);
