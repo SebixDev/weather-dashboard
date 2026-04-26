@@ -3,6 +3,7 @@
     --primary-color: #06283D;
     --accent-color: #00d2ff;
     --text-white: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.1);
 }
 
 /* 2. UNIVERSAL-RESET */
@@ -10,7 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 /* 3. HINTERGRUND & DYNAMIK */
@@ -23,26 +24,13 @@ body {
     align-items: center;
     color: var(--text-white);
     transition: all 0.8s ease-in-out;
-    background-attachment: fixed;
 }
 
-/* --- DYNAMISCHE KLASSEN --- */
-
-body.clear {
-    background: linear-gradient(135deg, #f7b733 0%, #fc4a1a 100%) !important;
-}
-
-body.clouds {
-    background: linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%) !important;
-}
-
-body.rain {
-    background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%) !important;
-}
-
-body.snow {
-    background: linear-gradient(135deg, #e6dada 0%, #274046 100%) !important;
-}
+/* Wetter-Klassen */
+body.clear { background: linear-gradient(135deg, #f7b733 0%, #fc4a1a 100%) !important; }
+body.clouds { background: linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%) !important; }
+body.rain { background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%) !important; }
+body.snow { background: linear-gradient(135deg, #e6dada 0%, #274046 100%) !important; }
 
 /* 4. DIE APP-KARTE */
 #app {
@@ -57,10 +45,10 @@ body.snow {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* 5. TITEL */
-header h2 {
-    margin-bottom: 1.5rem;
-    font-weight: 300;
+/* 5. ICON STYLE */
+.weather-icon {
+    width: 100px;
+    margin-bottom: 1rem;
 }
 
 /* 6. SUCHBOX */
@@ -86,31 +74,4 @@ header h2 {
     color: var(--primary-color);
     font-weight: bold;
     cursor: pointer;
-}
-
-/* 7. WETTER-ANZEIGE */
-.weather-info h1 {
-    font-size: 2rem;
-}
-
-#temp-display {
-    font-size: 4rem;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-/* 8. RESPONSIVE DESIGN (Für Handys) */
-@media (max-width: 450px) {
-    #app {
-        width: 95%;
-        padding: 1.5rem;
-    }
-
-    #temp-display {
-        font-size: 3rem;
-    }
-
-    .weather-info h1 {
-        font-size: 1.5rem;
-    }
 }
