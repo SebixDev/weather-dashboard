@@ -32,7 +32,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [ ] Detaillierte Wetter-Icons einbauen (Link einbauen!)
 - [ ] Vorhersage für die nächsten 5 Tage hinzufügen
 - [ ] Standort-Autovervollständigung
-- [ ] Readme.md verbessern und updaten
+- [ ] Readme.md verbessern und updaten sowie Design der Website an sich anpassen wie Abstände und Schriftgröße etc.
 
 ---
-*Erstellt als Teil eines Lern-Projekts.*
+*Erstellt als ein Lern-Projekts.*
