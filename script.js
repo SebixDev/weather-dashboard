@@ -21,11 +21,15 @@ async function checkWeather(city) {
     document.querySelector("#city-name").innerHTML = data.name;
     document.querySelector("#temp-display").innerHTML = Math.round(data.main.temp) + "°C";
     document.querySelector("#description").innerHTML = data.weather[0].description;
+    
+    // Feuchtigkeit und Wind API-Daten
+    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+    document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
 
-    // B: Wetter-Typ bestimmen
+    // B: Wetter-Typ
     const weatherMain = data.weather[0].main.toLowerCase();
 
-    // C: Hintergrund & Icon umschalten
+    // C: Hintergrund & Icon
     document.body.classList.remove("clear", "clouds", "rain", "snow");
 
     if (weatherMain === "clear") {
