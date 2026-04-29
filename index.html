@@ -1,3 +1,8 @@
+Alles klar, ich habe die neue Sektion für die Luftfeuchtigkeit und den Wind direkt in deinen HTML-Code integriert. Ich habe die Struktur so angepasst, dass die Details sauber unter der Wetteranzeige sitzen.
+
+Hier ist deine aktualisierte index.html:
+
+HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +19,7 @@
             <h2>Weather Dashboard</h2>
         </header>
 
-        <div class ="search-box">
+        <div class="search-box">
             <input type="text" id="search-input" placeholder="Enter city name">
             <button id="search-button">Search</button>
         </div>
@@ -25,6 +30,23 @@
             <h1 id="city-name">City Name</h1>
             <p id="temp-display">--°C</p>    
             <p id="description">weather conditions</p>
+
+            <div class="details">
+                <div class="col">
+                    <img src="images/humidity.png" alt="Humidity Icon">
+                    <div>
+                        <p class="humidity">--%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/wind.png" alt="Wind Icon">
+                    <div>
+                        <p class="wind">-- km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 
