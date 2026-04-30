@@ -37,6 +37,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [ ] Feuchtigkeits- & Wind-Anzeige
 - [ ] Feuchtigkeits- & Wind-Anzeige Icons einfügen
 - [ ] Icon-Ordner erstellen (siehe GMNI)
+- [ ] Icons herunbterladen
 
 
 ---
