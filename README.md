@@ -38,7 +38,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [ ] Feuchtigkeits- & Wind-Anzeige Icons einfügen
 - [ ] Icon-Ordner erstellen (siehe GMNI)
 - [ ] Icons herunbterladen auf "Flaticon"
-
+- [ ] Glasseffekt bei Design einbauen
 
 ---
 *Erstellt als ein Lern-Projekts.*
