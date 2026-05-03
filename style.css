@@ -105,3 +105,14 @@ body.snow { background: linear-gradient(135deg, #e6dada 0%, #274046 100%) !impor
     font-size: 0.9rem;
     opacity: 0.8;
 }
+
+/* 8. HEADER / TITEL */
+header {
+    margin-bottom: 3rem; 
+}
+
+header h2 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
