@@ -40,6 +40,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [ ] Icons herunbterladen auf "Flaticon"
 - [ ] Glas-Effekt als neues Designelement einbauen
 - [ ] Website moderner machen und Farben anpassen - (halb fertig)
+- [ ]
 
 
 ---
