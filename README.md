@@ -39,8 +39,8 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [ ] Icon-Ordner erstellen (siehe GMNI)
 - [ ] Icons herunbterladen auf "Flaticon"
 - [ ] Glas-Effekt als neues Designelement einbauen
+- [ ] 7 Tage Prognose einbauen
 - [ ] Website moderner machen und Farben anpassen - (halb fertig)
-- [ ]
 
 
 ---
