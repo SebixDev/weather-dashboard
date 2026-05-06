@@ -108,11 +108,17 @@ body.snow { background: linear-gradient(135deg, #e6dada 0%, #274046 100%) !impor
 
 /* 8. HEADER / TITEL */
 header {
-    margin-bottom: 3rem; 
+    margin-bottom: 3.5rem;
 }
 
 header h2 {
-    font-weight: 500;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.4rem;
+    background: linear-gradient(to right, #ffffff, var(--accent-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--text-white);
 }
