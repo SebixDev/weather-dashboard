@@ -45,4 +45,4 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 
 
 ---
-*Erstellt als ein Lern-Projekts.*
+*Erstellt als Teil ein Lern-Projekts.*
