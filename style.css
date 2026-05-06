@@ -112,13 +112,13 @@ header {
 }
 
 header h2 {
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     font-size: 1.4rem;
-    background: linear-gradient(to right, #ffffff, var(--accent-color));
+    background: linear-gradient(to right, var(--accent-color), #0072ff);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: var(--text-white);
+    filter: drop-shadow(0 0 8px rgba(0, 210, 255, 0.3));
 }
