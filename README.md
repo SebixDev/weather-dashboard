@@ -41,7 +41,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [ ] Glas-Effekt als neues Designelement einbauen
 - [ ] 7 Tage Prognose einbauen
 - [ ] UV-Index Daten hinzufügen
-- [ ] Website moderner machen und Farben anpassen - (halb fertig)
+- [ ] Website moderner machen und Farben anpassen
 
 
 ---
