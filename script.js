@@ -47,15 +47,13 @@ async function checkWeather(city) {
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
     document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
 
-    // UV-INDEX ABRUFEN (Zweiter API-Call mit Koordinaten)
+    // UV-INDEX ABRUFEN
     const lat = data.coord.lat;
     const lon = data.coord.lon;
     const uvResponse = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`);
     const uvData = await uvResponse.json();
     
-    // In der Air Pollution API ist der UV-Index oft als Teil der Daten versteckt, 
-    // hier nutzen wir die Logik für dein UV-Feld:
-    updateUVLevel(uvData.list[0].main.aqi); // Nutzt den Index für die Anzeige
+    updateUVLevel(uvData.list[0].main.aqi);
 
     // B: Wetter-Typ
     const weatherMain = data.weather[0].main.toLowerCase();
