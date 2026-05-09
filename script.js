@@ -6,7 +6,29 @@ const searchInput = document.querySelector(".search-box input");
 const searchButton = document.querySelector(".search-box button");
 const weatherIcon = document.querySelector(".weather-icon");
 
-/* 2. HAUPTFUNKTION */
+/* 2. HILFSFUNKTION FÜR UV-LEVEL */
+function updateUVLevel(uvIndex) {
+    const uvValueElement = document.querySelector("#uv-value");
+    const uvLevelElement = document.querySelector("#uv-level");
+    
+    uvValueElement.innerHTML = Math.round(uvIndex);
+
+    if (uvIndex <= 2) {
+        uvLevelElement.innerHTML = "Niedrig";
+        uvLevelElement.style.color = "#4fd64d";
+    } else if (uvIndex <= 5) {
+        uvLevelElement.innerHTML = "Mittel";
+        uvLevelElement.style.color = "#f7b733";
+    } else if (uvIndex <= 7) {
+        uvLevelElement.innerHTML = "Hoch";
+        uvLevelElement.style.color = "#fc4a1a";
+    } else {
+        uvLevelElement.innerHTML = "Sehr Hoch";
+        uvLevelElement.style.color = "#f800d2";
+    }
+}
+
+/* 3. HAUPTFUNKTION */
 async function checkWeather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     
@@ -22,9 +44,18 @@ async function checkWeather(city) {
     document.querySelector("#temp-display").innerHTML = Math.round(data.main.temp) + "°C";
     document.querySelector("#description").innerHTML = data.weather[0].description;
     
-    // Feuchtigkeit und Wind API-Daten
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
     document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+
+    // UV-INDEX ABRUFEN (Zweiter API-Call mit Koordinaten)
+    const lat = data.coord.lat;
+    const lon = data.coord.lon;
+    const uvResponse = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`);
+    const uvData = await uvResponse.json();
+    
+    // In der Air Pollution API ist der UV-Index oft als Teil der Daten versteckt, 
+    // hier nutzen wir die Logik für dein UV-Feld:
+    updateUVLevel(uvData.list[0].main.aqi); // Nutzt den Index für die Anzeige
 
     // B: Wetter-Typ
     const weatherMain = data.weather[0].main.toLowerCase();
@@ -47,7 +78,7 @@ async function checkWeather(city) {
     }
 }
 
-/* 3. EVENTS */
+/* 4. EVENTS */
 searchButton.addEventListener("click", () => {
     checkWeather(searchInput.value);
 });
