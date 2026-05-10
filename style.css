@@ -44,10 +44,31 @@ body.snow { background: linear-gradient(135deg, #e6dada 0%, #274046 100%) !impor
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* 5. ICON STYLE */
+/* 5. WETTER INFO (Zentrum) */
 .weather-icon {
     width: 100px;
     margin-bottom: 1rem;
+}
+
+#city-name {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+#temp-display {
+    font-size: 4.5rem;
+    font-weight: 200;
+    margin: 0.5rem 0;
+}
+
+#description {
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    margin-bottom: 2rem;
+    opacity: 0.9;
 }
 
 /* 6. SUCHBOX */
@@ -75,7 +96,7 @@ body.snow { background: linear-gradient(135deg, #e6dada 0%, #274046 100%) !impor
     cursor: pointer;
 }
 
-/* 7. DETAILS (Optimiert für 3 Spalten mit UV) */
+/* 7. DETAILS */
 .details {
     display: flex;
     align-items: center;
@@ -103,12 +124,11 @@ body.snow { background: linear-gradient(135deg, #e6dada 0%, #274046 100%) !impor
     font-weight: 600;
 }
 
-/* HIER IST DIE SCHWARZE SCHRIFT FÜR DAS UV-LEVEL */
 #uv-level {
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: #000000; /* Schwarze Schrift */
+    color: #000000;
     padding: 2px 6px;
     border-radius: 4px;
     margin-top: 3px;
@@ -120,7 +140,7 @@ body.snow { background: linear-gradient(135deg, #e6dada 0%, #274046 100%) !impor
     opacity: 0.8;
 }
 
-/* 8. HEADER / TITEL */
+/* 8. HEADER */
 header {
     margin-bottom: 3.5rem;
 }
