@@ -3,7 +3,7 @@
     --primary-color: #06283D;
     --accent-color: #00d2ff;
     --text-white: #ffffff;
-    --text-dark: #1a1a1a; /* Neue moderne dunkle Farbe */
+    --text-dark: #1a1a1a;
     --card-bg: rgba(255, 255, 255, 0.1);
 }
 
@@ -45,7 +45,7 @@ body.snow { background: linear-gradient(135deg, #e6dada 0%, #274046 100%) !impor
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* 5. WETTER INFO (Zentrum - jetzt in Dunkel) */
+/* 5. WETTER INFO */
 .weather-icon {
     width: 100px;
     margin-bottom: 1rem;
@@ -56,21 +56,21 @@ body.snow { background: linear-gradient(135deg, #e6dada 0%, #274046 100%) !impor
     font-weight: 700;
     margin-top: 10px;
     letter-spacing: 1px;
-    color: var(--text-dark) !important; /* Erzwungene dunkle Schrift */
+    color: var(--text-dark) !important;
 }
 
 #temp-display {
     font-size: 4.5rem;
     font-weight: 200;
     margin: 0.5rem 0;
-    color: var(--text-dark) !important; /* Erzwungene dunkle Schrift */
+    color: var(--text-dark) !important;
 }
 
 #description {
     font-size: 1.1rem;
     text-transform: capitalize;
     margin-bottom: 2rem;
-    color: var(--text-dark) !important; /* Erzwungene dunkle Schrift */
+    color: var(--text-dark) !important;
     opacity: 0.8;
 }
 
@@ -87,7 +87,7 @@ body.snow { background: linear-gradient(135deg, #e6dada 0%, #274046 100%) !impor
     border-radius: 8px;
     border: none;
     outline: none;
-    color: #333; /* Eingabetext dunkel */
+    color: #333;
 }
 
 .search-box button {
@@ -126,7 +126,7 @@ body.snow { background: linear-gradient(135deg, #e6dada 0%, #274046 100%) !impor
 .humidity, .wind, #uv-value {
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--text-white); /* Details bleiben weiß für den Kontrast */
+    color: var(--text-white);
 }
 
 #uv-level {
