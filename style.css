@@ -38,40 +38,42 @@ body.snow { background: linear-gradient(135deg, #e6dada 0%, #274046 100%) !impor
     backdrop-filter: blur(10px);
     width: 90%;
     max-width: 400px;
-    padding: 2rem;
-    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    border-radius: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* 5. WETTER INFO */
+
 .weather-icon {
-    width: 100px;
-    margin-bottom: 1rem;
+    width: 90px;
+    margin-bottom: 0.5rem;
 }
 
 #city-name {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-top: 10px;
-    letter-spacing: 1px;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-top: 5px;
+    line-height: 1.1;
+    letter-spacing: -1px;
     color: var(--text-dark) !important;
 }
 
 #temp-display {
-    font-size: 4.5rem;
-    font-weight: 200;
-    margin: 0.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
     color: var(--text-dark) !important;
 }
 
 #description {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-transform: capitalize;
     margin-bottom: 2rem;
     color: var(--text-dark) !important;
-    opacity: 0.8;
+    opacity: 0.7;
+    font-weight: 500;
 }
 
 /* 6. SUCHBOX */
@@ -84,15 +86,16 @@ body.snow { background: linear-gradient(135deg, #e6dada 0%, #274046 100%) !impor
 .search-box input {
     flex: 1;
     padding: 12px;
-    border-radius: 8px;
+    border-radius: 12px;
     border: none;
     outline: none;
-    color: #333;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
 }
 
 .search-box button {
     padding: 12px 20px;
-    border-radius: 8px;
+    border-radius: 12px;
     border: none;
     background-color: var(--accent-color);
     color: var(--primary-color);
@@ -105,8 +108,9 @@ body.snow { background: linear-gradient(135deg, #e6dada 0%, #274046 100%) !impor
     display: flex;
     align-items: center;
     justify-content: space-between; 
-    padding: 0;
-    margin-top: 2.5rem;
+    padding: 1.5rem 0 0 0;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     gap: 5px;
 }
 
@@ -115,49 +119,43 @@ body.snow { background: linear-gradient(135deg, #e6dada 0%, #274046 100%) !impor
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
 }
 
 .col img {
-    width: 30px; 
+    width: 28px; 
     margin-bottom: 8px;
+    filter: brightness(0) invert(1);
 }
 
 .humidity, .wind, #uv-value {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
-    color: var(--text-white);
 }
 
 #uv-level {
-    font-size: 0.7rem;
-    font-weight: 700;
+    font-size: 0.65rem;
+    font-weight: 800;
     text-transform: uppercase;
-    color: #000000;
+    color: #000;
     padding: 2px 6px;
     border-radius: 4px;
     margin-top: 3px;
-    display: inline-block;
 }
 
 .col p {
-    font-size: 0.8rem;
-    opacity: 0.8;
+    font-size: 0.75rem;
+    opacity: 0.6;
 }
 
 /* 8. HEADER */
 header {
-    margin-bottom: 3.5rem;
+    margin-bottom: 2rem;
 }
 
 header h2 {
-    font-weight: 800;
+    font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 1.4rem;
-    background: linear-gradient(to right, var(--accent-color), #0072ff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 8px rgba(0, 210, 255, 0.3));
+    letter-spacing: 5px;
+    font-size: 0.8rem;
+    opacity: 0.5;
 }
