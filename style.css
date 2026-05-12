@@ -2,9 +2,9 @@
 :root {
     --primary-color: #06283D;
     --accent-color: #00d2ff;
-    --text-main: #1a2a3a; /* Einheitliche moderne dunkle Farbe */
+    --text-main: #1a2a3a;
     --text-light: #ffffff;
-    --card-bg: rgba(255, 255, 255, 0.15); /* Etwas heller für besseren Kontrast */
+    --card-bg: rgba(255, 255, 255, 0.15);
 }
 
 /* 2. UNIVERSAL-RESET */
@@ -22,7 +22,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--text-main); /* Standard-Schriftfarbe */
+    color: var(--text-main);
     transition: all 0.8s ease-in-out;
 }
 
@@ -45,7 +45,7 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* 5. WETTER INFO (Einheitliche moderne Typografie) */
+/* 5. WETTER INFO */
 .weather-icon {
     width: 100px;
     margin-bottom: 0.5rem;
@@ -98,7 +98,7 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
     padding: 12px 20px;
     border-radius: 12px;
     border: none;
-    background-color: var(--text-main); /* Button jetzt passend zur Schrift */
+    background-color: var(--text-main);
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -107,7 +107,7 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
 
 .search-box button:active { transform: scale(0.95); }
 
-/* 7. DETAILS (Gleiche Farbe wie Haupttext) */
+/* 7. DETAILS */
 .details {
     display: flex;
     justify-content: space-between; 
@@ -128,7 +128,7 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
     width: 25px; 
     margin-bottom: 10px;
     opacity: 0.8;
-    filter: brightness(0); /* Icons werden einheitlich dunkel passend zur Schrift */
+    filter: brightness(0);
 }
 
 .humidity, .wind, #uv-value {
@@ -144,7 +144,7 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
     padding: 3px 6px;
     border-radius: 4px;
     margin-top: 4px;
-    color: #000; /* Text im Label bleibt schwarz für Lesbarkeit */
+    color: #000;
 }
 
 .col p {
