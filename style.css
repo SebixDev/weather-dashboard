@@ -2,7 +2,7 @@
 :root {
     --primary-color: #06283D;
     --accent-color: #00d2ff;
-    --text-main: #1a2a3a;
+    --text-main: #1a2a3a; 
     --text-light: #ffffff;
     --card-bg: rgba(255, 255, 255, 0.15);
 }
@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
 /* 3. HINTERGRUND */
@@ -36,8 +36,8 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
 #app {
     background: var(--card-bg);
     backdrop-filter: blur(15px);
-    width: 90%;
-    max-width: 400px;
+    width: 95%;
+    max-width: 420px;
     padding: 2.5rem 2rem;
     border-radius: 30px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
@@ -45,26 +45,40 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+/* 8. HEADER (JETZT GROSS & PRÄSENT) */
+header {
+    margin-bottom: 2.5rem;
+}
+
+header h2 {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.8rem; /* Deutlich vergrößert */
+    color: var(--text-main);
+    background: linear-gradient(to right, var(--text-main), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Moderner Gradient-Look */
+    display: inline-block;
+}
+
 /* 5. WETTER INFO */
 .weather-icon {
     width: 100px;
     margin-bottom: 0.5rem;
-    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
 }
 
 #city-name {
-    font-size: 3rem;
+    font-size: 2.8rem; /* Etwas angepasst für die Balance */
     font-weight: 800;
-    letter-spacing: -1.5px;
+    letter-spacing: -1px;
     color: var(--text-main) !important;
-    margin-bottom: 5px;
 }
 
 #temp-display {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: 300;
     color: var(--text-main) !important;
-    margin-bottom: 0.2rem;
 }
 
 #description {
@@ -80,7 +94,7 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
 .search-box {
     display: flex;
     gap: 10px;
-    margin-top: 2rem;
+    margin: 2rem 0;
 }
 
 .search-box input {
@@ -102,18 +116,14 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
     color: white;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.2s;
 }
-
-.search-box button:active { transform: scale(0.95); }
 
 /* 7. DETAILS */
 .details {
     display: flex;
     justify-content: space-between; 
     padding-top: 2rem;
-    margin-top: 2rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     gap: 10px;
 }
 
@@ -127,18 +137,16 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
 .col img {
     width: 25px; 
     margin-bottom: 10px;
-    opacity: 0.8;
     filter: brightness(0);
 }
 
 .humidity, .wind, #uv-value {
     font-size: 1.1rem;
     font-weight: 700;
-    color: var(--text-main);
 }
 
 #uv-level {
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     font-weight: 900;
     text-transform: uppercase;
     padding: 3px 6px;
@@ -150,17 +158,5 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
 .col p {
     font-size: 0.7rem;
     font-weight: 600;
-    color: var(--text-main);
     opacity: 0.5;
-}
-
-/* 8. HEADER */
-header h2 {
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 0.75rem;
-    margin-bottom: 2rem;
-    color: var(--text-main);
-    opacity: 0.4;
 }
