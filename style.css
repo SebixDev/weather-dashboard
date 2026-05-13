@@ -54,11 +54,11 @@ header h2 {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 1.8rem; /* Deutlich vergrößert */
+    font-size: 1.8rem;
     color: var(--text-main);
     background: linear-gradient(to right, var(--text-main), var(--accent-color));
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; /* Moderner Gradient-Look */
+    -webkit-text-fill-color: transparent;
     display: inline-block;
 }
 
@@ -69,7 +69,7 @@ header h2 {
 }
 
 #city-name {
-    font-size: 2.8rem; /* Etwas angepasst für die Balance */
+    font-size: 2.8rem;
     font-weight: 800;
     letter-spacing: -1px;
     color: var(--text-main) !important;
