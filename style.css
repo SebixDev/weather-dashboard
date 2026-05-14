@@ -3,7 +3,7 @@
     --primary-color: #06283D;
     --accent-color: #00d2ff;
     --text-white: #ffffff;
-    --text-dark: #1a2a3a; /* Moderne, einheitliche dunkle Schriftfarbe */
+    --text-dark: #1a2a3a;
     --card-bg: rgba(255, 255, 255, 0.15);
 }
 
@@ -53,7 +53,7 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
 }
 
 #city-name {
-    font-size: 3rem; /* Große moderne Überschrift */
+    font-size: 3rem;
     font-weight: 800;
     letter-spacing: -1.5px;
     color: var(--text-dark) !important;
@@ -62,7 +62,7 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
 
 #temp-display {
     font-size: 2.2rem;
-    font-weight: 300; /* Dünnere Schrift für modernen Kontrast */
+    font-weight: 300;
     color: var(--text-dark) !important;
     margin-bottom: 0.2rem;
 }
@@ -124,7 +124,7 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
 .col img {
     width: 25px; 
     margin-bottom: 10px;
-    filter: brightness(0); /* Icons werden dunkel passend zur Schrift */
+    filter: brightness(0);
     opacity: 0.8;
 }
 
@@ -141,7 +141,7 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
     padding: 3px 6px;
     border-radius: 4px;
     margin-top: 4px;
-    color: #000; /* Schwarze Schrift im Status-Badge */
+    color: #000;
 }
 
 .col p {
@@ -160,7 +160,7 @@ header h2 {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 1.8rem; /* Große Dashboard-Überschrift */
+    font-size: 1.8rem;
     background: linear-gradient(to right, var(--text-dark), var(--accent-color));
     background-clip: text;
     -webkit-background-clip: text;
