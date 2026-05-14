@@ -3,7 +3,7 @@
     --primary-color: #06283D;
     --accent-color: #00d2ff;
     --text-white: #ffffff;
-    --text-main: #1a2a3a;
+    --text-dark: #1a2a3a; /* Moderne, einheitliche dunkle Schriftfarbe */
     --card-bg: rgba(255, 255, 255, 0.15);
 }
 
@@ -23,11 +23,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--text-main);
+    color: var(--text-dark);
     transition: all 0.8s ease-in-out;
 }
 
-/* Wetter-Klassen */
+/* Dynamische Hintergründe */
 body.clear { background: linear-gradient(135deg, #FFD194 0%, #D1913C 100%) !important; }
 body.clouds { background: linear-gradient(135deg, #ECE9E6 0%, #FFFFFF 100%) !important; }
 body.rain { background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%) !important; }
@@ -53,16 +53,18 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
 }
 
 #city-name {
-    font-size: 2.8rem;
+    font-size: 3rem; /* Große moderne Überschrift */
     font-weight: 800;
-    letter-spacing: -1px;
-    color: var(--text-main) !important;
+    letter-spacing: -1.5px;
+    color: var(--text-dark) !important;
+    margin-bottom: 5px;
 }
 
 #temp-display {
-    font-size: 2rem;
-    font-weight: 300;
-    color: var(--text-main) !important;
+    font-size: 2.2rem;
+    font-weight: 300; /* Dünnere Schrift für modernen Kontrast */
+    color: var(--text-dark) !important;
+    margin-bottom: 0.2rem;
 }
 
 #description {
@@ -71,7 +73,7 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
     text-transform: uppercase;
     letter-spacing: 2px;
     opacity: 0.6;
-    color: var(--text-main) !important;
+    color: var(--text-dark) !important;
 }
 
 /* 6. SUCHBOX */
@@ -87,16 +89,16 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
     border-radius: 12px;
     border: none;
     outline: none;
-    background: rgba(255, 255, 255, 0.5);
-    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.4);
+    color: var(--text-dark);
     font-weight: 600;
 }
 
 .search-box button {
     padding: 12px 20px;
-    border-radius: 8px;
+    border-radius: 12px;
     border: none;
-    background-color: var(--text-main);
+    background-color: var(--text-dark);
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -105,10 +107,9 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
 /* 7. DETAILS */
 .details {
     display: flex;
-    align-items: center;
     justify-content: space-between; 
     padding-top: 2rem;
-    margin-top: 1rem; 
+    margin-top: 2rem;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     gap: 10px;
 }
@@ -118,18 +119,19 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
 }
 
 .col img {
     width: 25px; 
     margin-bottom: 10px;
-    filter: brightness(0);
+    filter: brightness(0); /* Icons werden dunkel passend zur Schrift */
+    opacity: 0.8;
 }
 
 .humidity, .wind, #uv-value {
     font-size: 1.1rem;
     font-weight: 700;
+    color: var(--text-dark);
 }
 
 #uv-level {
@@ -139,12 +141,13 @@ body.snow { background: linear-gradient(135deg, #E0EAFC 0%, #CFDEF3 100%) !impor
     padding: 3px 6px;
     border-radius: 4px;
     margin-top: 4px;
-    color: #000;
+    color: #000; /* Schwarze Schrift im Status-Badge */
 }
 
 .col p {
     font-size: 0.7rem;
     font-weight: 600;
+    color: var(--text-dark);
     opacity: 0.5;
 }
 
@@ -157,10 +160,9 @@ header h2 {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 1.8rem;
-    background: linear-gradient(to right, var(--text-main), var(--accent-color));
+    font-size: 1.8rem; /* Große Dashboard-Überschrift */
+    background: linear-gradient(to right, var(--text-dark), var(--accent-color));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 8px rgba(0, 210, 255, 0.1));
 }
