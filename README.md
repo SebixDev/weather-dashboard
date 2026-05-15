@@ -29,11 +29,11 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [x] Grundlegendes HTML/CSS Design
 - [x] JavaScript API-Anbindung
 - [ ] Dynamische Hintergründe
-- [ ] Wetter Icons hinzufügen
+- [x] Wetter Icons hinzufügen
 - [ ] Detaillierte Wetter-Icons einbauen (Link einbauen!)
 - [ ] Vorhersage für die nächsten 5 Tage hinzufügen
 - [ ] Standort-Autovervollständigung
-- [ ] Readme.md verbessern und updaten sowie Design der Website an sich anpassen wie Abstände und Schriftgröße etc.
+- [x] Readme.md verbessern und updaten sowie Design der Website an sich anpassen wie Abstände und Schriftgröße etc.
 - [ ] Feuchtigkeits- & Wind-Anzeige
 - [ ] Feuchtigkeits- & Wind-Anzeige Icons einfügen
 - [ ] Icon-Ordner erstellen (siehe GMNI)
@@ -41,7 +41,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [ ] Glas-Effekt als neues Designelement einbauen
 - [ ] 7 Tage Prognose einbauen
 - [ ] UV-Index Daten hinzufügen
-- [ ] Website moderner machen und Farben anpassen
+- [x] Website moderner machen und Farben anpassen
 
 
 ---
