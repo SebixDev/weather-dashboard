@@ -35,7 +35,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [ ] Standort-Autovervollständigung
 - [x] Readme.md verbessern und updaten sowie Design der Website an sich anpassen wie Abstände und Schriftgröße etc.
 - [ ] Feuchtigkeits- & Wind-Anzeige
-- [ ] Feuchtigkeits- & Wind-Anzeige Icons einfügen
+- [x] Feuchtigkeits- & Wind-Anzeige Icons einfügen
 - [ ] Icon-Ordner erstellen (siehe GMNI)
 - [ ] Icons herunbterladen auf "Flaticon"
 - [ ] Glas-Effekt als neues Designelement einbauen
