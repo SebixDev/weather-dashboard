@@ -30,11 +30,11 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [x] JavaScript API-Anbindung
 - [ ] Dynamische Hintergründe
 - [x] Wetter Icons hinzufügen
-- [ ] Detaillierte Wetter-Icons einbauen (Link einbauen!)
+- [ ] Detaillierte Wetter-Icons einbauen und verbessern (Link einbauen!)
 - [ ] Vorhersage für die nächsten 5 Tage hinzufügen
 - [ ] Standort-Autovervollständigung
 - [x] Readme.md verbessern und updaten sowie Design der Website an sich anpassen wie Abstände und Schriftgröße etc.
-- [ ] Feuchtigkeits- & Wind-Anzeige
+- [x] Feuchtigkeits- & Wind-Anzeige
 - [x] Feuchtigkeits- & Wind-Anzeige Icons einfügen
 - [ ] Icon-Ordner erstellen (siehe GMNI)
 - [ ] Icons herunbterladen auf "Flaticon"
