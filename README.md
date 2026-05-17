@@ -28,6 +28,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 
 - [x] Grundlegendes HTML/CSS Design
 - [x] JavaScript API-Anbindung
+- [ ] apiKey einfügen für Wetterdaten
 - [ ] Dynamische Hintergründe
 - [x] Wetter Icons hinzufügen
 - [ ] Detaillierte Wetter-Icons einbauen und verbessern (Link einbauen!)
