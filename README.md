@@ -43,6 +43,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [ ] 7 Tage Prognose einbauen
 - [ ] UV-Index Daten hinzufügen
 - [x] Website moderner machen und Farben anpassen
+- [ ] Norwegen icon raus und austauschen mit normalem icon
 
 
 ---
