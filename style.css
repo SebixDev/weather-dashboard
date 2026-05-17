@@ -2,9 +2,10 @@
 :root {
     --primary-color: #06283D;
     --accent-color: #00d2ff;
-    --text-main: #243447; 
-    --text-sub: #5a6a7a; 
-    --card-bg: rgba(255, 255, 255, 0.25);
+    /* Moderne, helle Farbpalette für maximale Eleganz */
+    --text-light: #ffffff; /* Strahlendes Weiß für Haupt-Überschriften */
+    --text-muted: rgba(255, 255, 255, 0.7); /* Weiches Silber-Weiß für Beschriftungen */
+    --card-bg: rgba(255, 255, 255, 0.12); /* Transparenter Glaseffekt */
 }
 
 /* 2. UNIVERSAL-RESET */
@@ -12,113 +13,123 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 /* 3. HINTERGRUND & DYNAMIK */
 body {
-    background: linear-gradient(135deg, #06283d 0%, #136a8a 100%);
+    background-color: var(--primary-color);
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--text-main);
+    color: var(--text-light); /* Standardmäßig helle Schrift */
     transition: all 0.8s ease-in-out;
 }
 
-/* Dynamische Hintergründe */
-body.clear { background: linear-gradient(135deg, #FFEFBA 0%, #FFFFFF 100%) !important; }
-body.clouds { background: linear-gradient(135deg, #E8E9EB 0%, #BDC3C7 100%) !important; }
-body.rain { background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%) !important; }
-body.snow { background: linear-gradient(135deg, #e6e9f0 0%, #eef1f5 100%) !important; }
+/* Dynamische Hintergründe (Dunklere, kräftige Töne, damit die helle Schrift strahlt) */
+body.clear { background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%) !important; }
+body.clouds { background: linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%) !important; }
+body.rain { background: linear-gradient(135deg, #373b44 0%, #4286f4 100%) !important; }
+body.snow { background: linear-gradient(135deg, #83a4d4 0%, #b6fbff 100%) !important; }
 
 /* 4. DIE APP-KARTE */
 #app {
     background: var(--card-bg);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     width: 95%;
     max-width: 420px;
-    padding: 3rem 2rem;
-    border-radius: 40px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    padding: 2.5rem 2rem;
+    border-radius: 30px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
     text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* 5. ICON STYLE & WETTER INFO */
 .weather-icon {
-    width: 130px;
-    margin-bottom: 1rem;
-    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+    width: 120px;
+    margin-bottom: 0.5rem;
+    /* Subtiler Schatten, damit farbige Icons wie die gelbe Sonne Tiefe bekommen */
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.15));
 }
 
 #city-name {
-    font-size: 3.2rem;
+    font-size: 3rem;
     font-weight: 800;
-    letter-spacing: -1.5px;
-    color: var(--text-main) !important;
+    letter-spacing: -1px;
+    color: var(--text-light) !important; /* Komplett einheitlich in Weiß */
     margin-bottom: 5px;
 }
 
 #temp-display {
     font-size: 2.5rem;
-    font-weight: 300;
-    color: var(--text-main) !important;
-    opacity: 0.9;
+    font-weight: 300; /* Dünnes Gewicht für edlen Look */
+    color: var(--text-light) !important;
 }
 
 #description {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    color: var(--text-sub) !important;
-    margin-top: 5px;
+    letter-spacing: 2px;
+    color: var(--text-muted) !important; /* Leicht abgeschwächt für die Hierarchie */
 }
 
 /* 6. SUCHBOX */
 .search-box {
     display: flex;
-    gap: 12px;
-    margin: 2.5rem 0;
+    gap: 10px;
+    margin: 2rem 0;
 }
 
 .search-box input {
     flex: 1;
-    padding: 14px 20px;
-    border-radius: 15px;
-    border: none;
+    padding: 14px 18px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     outline: none;
-    background: rgba(255, 255, 255, 0.6);
-    color: var(--text-main);
-    font-weight: 600;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-light);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.search-box input:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent-color);
 }
 
 .search-box button {
-    padding: 14px 24px;
-    border-radius: 15px;
+    padding: 14px 22px;
+    border-radius: 14px;
     border: none;
-    background-color: var(--text-main);
-    color: white;
-    font-weight: bold;
+    background-color: var(--accent-color);
+    color: #06283D; /* Kontrastfarbe für den Button */
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 .search-box button:hover {
-    background-color: var(--primary-color);
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
 }
 
 /* 7. DETAILS */
 .details {
     display: flex;
     justify-content: space-between; 
-    padding-top: 2.5rem;
-    margin-top: 1rem;
-    border-top: 2px solid rgba(255, 255, 255, 0.3);
-    gap: 15px;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    gap: 10px;
 }
 
 .col {
@@ -129,44 +140,43 @@ body.snow { background: linear-gradient(135deg, #e6e9f0 0%, #eef1f5 100%) !impor
 }
 
 .col img {
-    width: 38px;
-    margin-bottom: 12px;
+    width: 35px;
+    margin-bottom: 10px;
 }
 
 .humidity, .wind, #uv-value {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    color: var(--text-main);
+    color: var(--text-light);
 }
 
 #uv-level {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     font-weight: 900;
     text-transform: uppercase;
-    padding: 4px 8px;
-    border-radius: 6px;
-    margin-top: 5px;
-    color: #000; 
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin-top: 4px;
+    color: #000;
 }
 
 .col p {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
-    color: var(--text-sub);
+    color: var(--text-muted);
 }
 
 /* 8. HEADER / TITEL */
 header {
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
 
 header h2 {
-    font-weight: 900;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 1.6rem;
-    background: linear-gradient(to right, var(--text-main), #4facfe);
-    background-clip: text;
+    letter-spacing: 2px;
+    font-size: 1.8rem;
+    background: linear-gradient(to right, var(--text-light), var(--accent-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
