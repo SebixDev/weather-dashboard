@@ -2,10 +2,9 @@
 :root {
     --primary-color: #06283D;
     --accent-color: #00d2ff;
-    /* Moderne, helle Farbpalette für maximale Eleganz */
-    --text-light: #ffffff; /* Strahlendes Weiß für Haupt-Überschriften */
-    --text-muted: rgba(255, 255, 255, 0.7); /* Weiches Silber-Weiß für Beschriftungen */
-    --card-bg: rgba(255, 255, 255, 0.12); /* Transparenter Glaseffekt */
+    --text-light: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --card-bg: rgba(255, 255, 255, 0.12);
 }
 
 /* 2. UNIVERSAL-RESET */
@@ -24,11 +23,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--text-light); /* Standardmäßig helle Schrift */
+    color: var(--text-light);
     transition: all 0.8s ease-in-out;
 }
 
-/* Dynamische Hintergründe (Dunklere, kräftige Töne, damit die helle Schrift strahlt) */
+/* Dynamische Hintergründe */
 body.clear { background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%) !important; }
 body.clouds { background: linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%) !important; }
 body.rain { background: linear-gradient(135deg, #373b44 0%, #4286f4 100%) !important; }
@@ -52,7 +51,6 @@ body.snow { background: linear-gradient(135deg, #83a4d4 0%, #b6fbff 100%) !impor
 .weather-icon {
     width: 120px;
     margin-bottom: 0.5rem;
-    /* Subtiler Schatten, damit farbige Icons wie die gelbe Sonne Tiefe bekommen */
     filter: drop-shadow(0 8px 12px rgba(0,0,0,0.15));
 }
 
@@ -60,13 +58,13 @@ body.snow { background: linear-gradient(135deg, #83a4d4 0%, #b6fbff 100%) !impor
     font-size: 3rem;
     font-weight: 800;
     letter-spacing: -1px;
-    color: var(--text-light) !important; /* Komplett einheitlich in Weiß */
+    color: var(--text-light) !important;
     margin-bottom: 5px;
 }
 
 #temp-display {
     font-size: 2.5rem;
-    font-weight: 300; /* Dünnes Gewicht für edlen Look */
+    font-weight: 300;
     color: var(--text-light) !important;
 }
 
@@ -75,7 +73,7 @@ body.snow { background: linear-gradient(135deg, #83a4d4 0%, #b6fbff 100%) !impor
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--text-muted) !important; /* Leicht abgeschwächt für die Hierarchie */
+    color: var(--text-muted) !important;
 }
 
 /* 6. SUCHBOX */
@@ -111,7 +109,7 @@ body.snow { background: linear-gradient(135deg, #83a4d4 0%, #b6fbff 100%) !impor
     border-radius: 14px;
     border: none;
     background-color: var(--accent-color);
-    color: #06283D; /* Kontrastfarbe für den Button */
+    color: #06283D;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -177,6 +175,7 @@ header h2 {
     letter-spacing: 2px;
     font-size: 1.8rem;
     background: linear-gradient(to right, var(--text-light), var(--accent-color));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
