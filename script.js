@@ -2,8 +2,8 @@
 const apiKey = "DEIN_API_KEY_HIER";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 
-const searchInput = document.querySelector(".search-box input");
-const searchButton = document.querySelector(".search-box button");
+const searchInput = document.querySelector("#search-input");
+const searchButton = document.querySelector("#search-button");
 const weatherIcon = document.querySelector(".weather-icon");
 
 /* 2. HILFSFUNKTION FÜR UV-LEVEL */
@@ -28,7 +28,49 @@ function updateUVLevel(uvIndex) {
     }
 }
 
-/* 3. HAUPTFUNKTION */
+/* 3. NEUE FUNKTION FÜR 7-TAGE PROGNOSE */
+async function getForecast(city) {
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric&lang=de`;
+    const forecastList = document.querySelector("#forecast-list");
+    
+    // Altes Ergebnis leeren
+    forecastList.innerHTML = "";
+
+    try {
+        const response = await fetch(forecastUrl);
+        const data = await response.json();
+
+        // Filtert die Werte heraus, die (12:00 Uhr) gemessen werden
+        const dailyData = data.list.filter(item => item.dt_txt.includes("12:00:00"));
+
+        dailyData.forEach(day => {
+            // Wochentag ermitteln
+            const date = new Date(day.dt * 1000);
+            const options = { weekday: 'short' };
+            const dayName = date.toLocaleDateString('de-DE', options);
+
+            // Wetter-Zustand für das passende Icon
+            const weatherMain = day.weather[0].main.toLowerCase();
+
+            // HTML Element für diesen Tag erstellen
+            const forecastItem = document.createElement("div");
+            forecastItem.classList.add("forecast-item");
+
+            forecastItem.innerHTML = `
+                <p class="forecast-day">${dayName}</p>
+                <img src="images/${weatherMain}.png" alt="Wetter">
+                <p class="forecast-temp">${Math.round(day.main.temp)}°C</p>
+            `;
+
+            forecastList.appendChild(forecastItem);
+        });
+
+    } catch (error) {
+        console.error("Fehler beim Laden der Prognose:", error);
+    }
+}
+
+/* 4. HAUPTFUNKTION */
 async function checkWeather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     
@@ -58,8 +100,8 @@ async function checkWeather(city) {
     // B: Wetter-Typ
     const weatherMain = data.weather[0].main.toLowerCase();
 
-    // C: Hintergrund & Icon
-    document.body.classList.remove("clear", "clouds", "rain", "snow");
+    // C: Hintergrund & Icon zurücksetzen
+    document.body.className = ""; 
 
     if (weatherMain === "clear") {
         document.body.classList.add("clear");
@@ -74,9 +116,12 @@ async function checkWeather(city) {
         document.body.classList.add("snow");
         weatherIcon.src = "images/snow.png";
     }
+
+    // Prognose für die Stadt abrufen
+    getForecast(city);
 }
 
-/* 4. EVENTS */
+/* 5. EVENTS */
 searchButton.addEventListener("click", () => {
     checkWeather(searchInput.value);
 });
