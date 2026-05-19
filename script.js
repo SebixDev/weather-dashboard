@@ -117,7 +117,7 @@ async function checkWeather(city) {
         weatherIcon.src = "images/snow.png";
     }
 
-    // Prognose für die Stadt abrufen
+    // Prognose für die Stadt
     getForecast(city);
 }
 
