@@ -41,6 +41,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [ ] Icons herunbterladen auf "Flaticon"
 - [ ] Glas-Effekt als neues Designelement einbauen
 - [x] 7 Tage Prognose einbauen
+- [ ] 7 Tage Prognose verbessern und verschönern
 - [ ] UV-Index Daten hinzufügen
 - [x] Website moderner machen und Farben anpassen
 - [ ] Norwegen icon raus und austauschen mit normalem icon
