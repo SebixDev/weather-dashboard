@@ -25,6 +25,7 @@ body {
     align-items: center;
     color: var(--text-light);
     transition: all 0.8s ease-in-out;
+    padding: 20px;
 }
 
 /* Dynamische Hintergründe */
@@ -33,54 +34,45 @@ body.clouds { background: linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%) !imp
 body.rain { background: linear-gradient(135deg, #373b44 0%, #4286f4 100%) !important; }
 body.snow { background: linear-gradient(135deg, #83a4d4 0%, #b6fbff 100%) !important; }
 
-/* 4. DIE APP-KARTE */
+/* 4. APP-KARTE */
 #app {
     background: var(--card-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    width: 95%;
-    max-width: 420px;
-    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 900px;
+    padding: 2.5rem;
     border-radius: 30px;
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
-    text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.15);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
 }
 
-/* 5. ICON STYLE & WETTER INFO */
-.weather-icon {
-    width: 120px;
+/* 5. SUCHBOX & HEADER */
+header {
+    grid-column: 1 / -1;
     margin-bottom: 0.5rem;
-    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.15));
+    text-align: center;
 }
 
-#city-name {
-    font-size: 3rem;
+header h2 {
     font-weight: 800;
-    letter-spacing: -1px;
-    color: var(--text-light) !important;
-    margin-bottom: 5px;
-}
-
-#temp-display {
-    font-size: 2.5rem;
-    font-weight: 300;
-    color: var(--text-light) !important;
-}
-
-#description {
-    font-size: 1rem;
-    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: var(--text-muted) !important;
+    font-size: 2rem;
+    background: linear-gradient(to right, var(--text-light), var(--accent-color));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* 6. SUCHBOX */
 .search-box {
+    grid-column: 1 / -1;
     display: flex;
     gap: 10px;
-    margin: 2rem 0;
+    margin-bottom: 1rem;
 }
 
 .search-box input {
@@ -120,12 +112,56 @@ body.snow { background: linear-gradient(135deg, #83a4d4 0%, #b6fbff 100%) !impor
     box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
 }
 
+/* 6. LINKER BEREICH: HAUPTWETTER */
+.main-weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.weather-icon {
+    width: 140px;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.15));
+}
+
+#city-name {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text-light) !important;
+    margin-bottom: 5px;
+}
+
+#temp-display {
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--text-light) !important;
+}
+
+#description {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted) !important;
+}
+
+/* RECHTER BEREICH BÜNDELUNG */
+.right-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
 /* 7. DETAILS */
 .details {
     display: flex;
     justify-content: space-between; 
-    padding-top: 2rem;
-    margin-top: 2rem;
+    padding-top: 1.5rem;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     gap: 10px;
 }
@@ -143,7 +179,7 @@ body.snow { background: linear-gradient(135deg, #83a4d4 0%, #b6fbff 100%) !impor
 }
 
 .humidity, .wind, #uv-value {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--text-light);
 }
@@ -159,96 +195,101 @@ body.snow { background: linear-gradient(135deg, #83a4d4 0%, #b6fbff 100%) !impor
 }
 
 .col p {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 600;
     color: var(--text-muted);
 }
 
-/* 8. HEADER / TITEL */
-header {
-    margin-bottom: 2.5rem;
-}
-
-header h2 {
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 1.8rem;
-    background: linear-gradient(to right, var(--text-light), var(--accent-color));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* 9. 7-TAGE PROGNOSE */
+/* 8. 7-TAGE PROGNOSE */
 .forecast-container {
-    margin-top: 2.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
     text-align: left;
 }
 
 .forecast-container h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 1.5rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
     color: var(--text-light);
-    opacity: 0.9;
+    opacity: 0.85;
 }
 
 .forecast-list {
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: flex-start;
+    gap: 12px;
     overflow-x: auto;
-    padding-bottom: 5px;
+    padding: 5px 2px 12px 2px;
 }
 
-.forecast-list::-webkit-scrollbar { 
-    display: none; 
-}
-
-.forecast-list { 
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
-}
+.forecast-list::-webkit-scrollbar { display: none; }
+.forecast-list { -ms-overflow-style: none; scrollbar-width: none; }
 
 .forecast-item {
-    flex: 1;
-    min-width: 55px;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 12px 8px;
-    border-radius: 15px;
+    flex: 0 0 72px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 14px 8px;
+    border-radius: 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: transform 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .forecast-item:hover {
-    transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.06) 100%);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .forecast-day {
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
     color: var(--text-muted);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .forecast-item img {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 8px;
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+    width: 34px;
+    height: 34px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
 }
 
 .forecast-temp {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--text-light);
+}
+
+/* 9. PC-SPEZIFISCHES LAYOUT */ 
+
+@media (min-width: 768px) {
+    #app {
+        grid-template-columns: 1fr 1.3fr;
+        align-items: stretch;
+    }
+    
+    .main-weather {
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
+        padding-right: 2rem;
+    }
+    
+    .details {
+        border-top: none;
+        padding-top: 0;
+    }
+    
+    .forecast-container {
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
 }
