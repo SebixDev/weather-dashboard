@@ -67,7 +67,7 @@ body.snow {
     position: relative;
 }
 
-/* Subtiler Glow-Effekt */
+/* Glow-Effekt */
 #app::before {
     content: '';
     position: absolute;
@@ -94,6 +94,7 @@ header h2 {
     background: linear-gradient(135deg, #ffffff 0%, var(--theme-accent) 100%);
     background-clip: text;
     -webkit-background-clip: text;
+    color: transparent;
     -webkit-text-fill-color: transparent;
 }
 
@@ -248,7 +249,7 @@ header h2 {
     margin-top: 2px;
 }
 
-/* Spezial-Styling UV-Label */
+/* Styling für UV-Label */
 #uv-level {
     font-size: 0.65rem;
     font-weight: 800;
@@ -275,7 +276,6 @@ header h2 {
     padding-bottom: 8px;
 }
 
-/* Unsichtbarer Scrollbar-Spacer */
 .forecast-list::-webkit-scrollbar { height: 0px; background: transparent; }
 .forecast-list { -ms-overflow-style: none; scrollbar-width: none; }
 
