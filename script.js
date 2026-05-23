@@ -6,7 +6,7 @@ const searchInput = document.querySelector("#search-input");
 const searchButton = document.querySelector("#search-button");
 const weatherIcon = document.querySelector(".weather-icon");
 
-/* 2. HILFSFUNKTION FÜR UV-LEVEL */
+/* 2. HILFSFUNKTION UV-LEVEL */
 function updateUVLevel(uvIndex) {
     const uvValueElement = document.querySelector("#uv-value");
     const uvLevelElement = document.querySelector("#uv-level");
@@ -28,37 +28,35 @@ function updateUVLevel(uvIndex) {
     }
 }
 
-/* 3. NEUE FUNKTION FÜR 7-TAGE PROGNOSE */
+/* 3. HAUPTFUNKTION 7-TAGE PROGNOSE */
 async function getForecast(city) {
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric&lang=de`;
     const forecastList = document.querySelector("#forecast-list");
     
-    // Altes Ergebnis leeren
     forecastList.innerHTML = "";
 
     try {
         const response = await fetch(forecastUrl);
         const data = await response.json();
 
-        // Filtert die Werte heraus, die (12:00 Uhr) gemessen werden
         const dailyData = data.list.filter(item => item.dt_txt.includes("12:00:00"));
 
         dailyData.forEach(day => {
-            // Wochentag ermitteln
             const date = new Date(day.dt * 1000);
             const options = { weekday: 'short' };
-            const dayName = date.toLocaleDateString('de-DE', options);
+            const dayName = date.toLocaleDateString('de-DE', options).toUpperCase();
 
-            // Wetter-Zustand für das passende Icon
             const weatherMain = day.weather[0].main.toLowerCase();
+            
+            const iconCode = day.weather[0].icon;
+            const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
-            // HTML Element für diesen Tag erstellen
             const forecastItem = document.createElement("div");
             forecastItem.classList.add("forecast-item");
 
             forecastItem.innerHTML = `
                 <p class="forecast-day">${dayName}</p>
-                <img src="images/${weatherMain}.png" alt="Wetter">
+                <img src="${iconUrl}" alt="Wetter">
                 <p class="forecast-temp">${Math.round(day.main.temp)}°C</p>
             `;
 
@@ -100,7 +98,7 @@ async function checkWeather(city) {
     // B: Wetter-Typ
     const weatherMain = data.weather[0].main.toLowerCase();
 
-    // C: Hintergrund & Icon zurücksetzen
+    // C: Hintergrund & Haupt-Icon zurücksetzen
     document.body.className = ""; 
 
     if (weatherMain === "clear") {
@@ -117,7 +115,7 @@ async function checkWeather(city) {
         weatherIcon.src = "images/snow.png";
     }
 
-    // Prognose für die Stadt
+    // Prognose Stadt aufrufen
     getForecast(city);
 }
 
