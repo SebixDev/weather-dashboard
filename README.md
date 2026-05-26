@@ -46,6 +46,8 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [x] Website moderner machen und Farben anpassen
 - [ ] Norwegen icon raus und austauschen mit normalem icon
 
+Morgen (27.06.2026): API Link eingeben in API Feld. Image Ordner erstellen und Bilder für Icons einfügen.
+
 
 ---
 *Erstellt als Teil ein Lern-Projekts.*
