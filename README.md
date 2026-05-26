@@ -38,13 +38,12 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [x] Feuchtigkeits- & Wind-Anzeige
 - [x] Feuchtigkeits- & Wind-Anzeige Icons einfügen
 - [x] Icon-Ordner erstellen (siehe GMNI)
-- [ ] Icons herunnterladen auf "Flaticon"
+- [ ] Icons herunnterladen auf "Flaticon" und lokalen Ordner erstellen am PC.
 - [ ] Glas-Effekt als neues Designelement einbauen
 - [x] 7 Tage Prognose einbauen
 - [ ] 7 Tage Prognose verbessern und verschönern
 - [ ] UV-Index Daten hinzufügen
 - [x] Website moderner machen und Farben anpassen
-- [ ] Norwegen icon raus und austauschen mit normalem icon
 
 Morgen (27.06.2026): API Link eingeben in API Feld. Image Ordner erstellen und Bilder für Icons einfügen.
 
