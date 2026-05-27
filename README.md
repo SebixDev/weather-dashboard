@@ -33,7 +33,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [x] Wetter Icons hinzufügen
 - [ ] Detaillierte Wetter-Icons einbauen und verbessern (Link einbauen!)
 - [x] Vorhersage für die nächsten 7 Tage hinzufügen
-- [ ] Standort-Autovervollständigung
+- [x] Standort-Autovervollständigung
 - [x] Readme.md verbessern und updaten sowie Design der Website an sich anpassen wie Abstände und Schriftgröße etc.
 - [x] Feuchtigkeits- & Wind-Anzeige
 - [x] Feuchtigkeits- & Wind-Anzeige Icons einfügen
@@ -45,7 +45,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [ ] UV-Index Daten hinzufügen
 - [x] Website moderner machen und Farben anpassen
 
-Morgen (28.06.2026): Image Ordner erstellen und Bilder für Icons einfügen. Ebenso Städt verlinken/fixen.
+Morgen (28.06.2026): Image Ordner erstellen und Bilder für Icons einfügen. Dynamische Hintergründe fixen.
 
 
 ---
