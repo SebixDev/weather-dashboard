@@ -28,7 +28,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 
 - [x] Grundlegendes HTML/CSS Design
 - [x] JavaScript API-Anbindung
-- [ ] apiKey einfügen für Wetterdaten
+- [x] apiKey einfügen für Wetterdaten
 - [ ] Dynamische Hintergründe
 - [x] Wetter Icons hinzufügen
 - [ ] Detaillierte Wetter-Icons einbauen und verbessern (Link einbauen!)
@@ -45,7 +45,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [ ] UV-Index Daten hinzufügen
 - [x] Website moderner machen und Farben anpassen
 
-Morgen (27.06.2026): API Link eingeben in API Feld. Image Ordner erstellen und Bilder für Icons einfügen.
+Morgen (28.06.2026): Image Ordner erstellen und Bilder für Icons einfügen. Ebenso Städt verlinken/fixen.
 
 
 ---
