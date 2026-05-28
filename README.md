@@ -44,8 +44,9 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [ ] 7 Tage Prognose verbessern und verschönern
 - [ ] UV-Index Daten hinzufügen
 - [x] Website moderner machen und Farben anpassen
+- [ ] Bei neuladen der Seite, neu laden verhindern
 
-Morgen (28.06.2026): Image Ordner erstellen und Bilder für Icons einfügen. Dynamische Hintergründe fixen.
+Morgen (29.06.2026): Image Ordner erstellen und Bilder für Icons einfügen. Dynamische Hintergründe fixen. (Ordner erstellen für videos von Pixabay oder Pexels)
 
 
 ---

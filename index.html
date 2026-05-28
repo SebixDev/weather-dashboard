@@ -3,67 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wetter-Dashboard</title>
+    <title>Premium Wetter Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <video autoplay loop muted playsinline id="bg-video">
+        <source src="images/clear.mp4" type="video/mp4">
+    </video>
+
     <div id="app">
         <header>
-            <h2>Wetter-Dashboard</h2>
+            <h2>Wetter Vorhersage</h2>
         </header>
 
         <div class="search-box">
-            <input type="text" id="search-input" placeholder="Geben Sie eine Stadt ein...">
-            <button id="search-button">Search</button>
+            <input type="text" id="search-input" placeholder="Stadt eingeben..." spellcheck="false">
+            <button id="search-button">Suchen</button>
         </div>
 
-        <div class="main-weather">
-            <img src="images/clear.png" class="weather-icon" alt="Wetter Icon">
+        <main class="main-weather">
+            <img src="images/clear.png" class="weather-icon" alt="Wetter Zustand">
             <h1 id="city-name">Stadt</h1>
-            <p id="temp-display">--°C</p>    
-            <p id="description">Wetter</p>
-        </div>
+            <h2 id="temp-display">--°C</h2>
+            <p id="description">Lade...</p>
+        </main>
 
         <div class="right-content">
-            
             <div class="details">
                 <div class="col">
-                    <img src="https://cdn-icons-png.flaticon.com/512/727/727891.png" alt="Humidity Icon">
-                    <div>
-                        <p class="humidity">--%</p>
-                        <p>Humidity</p>
-                    </div>
+                    <img src="images/humidity.png" alt="Luftfeuchtigkeit">
+                    <div class="humidity">--%</div>
+                    <p>Feuchtigkeit</p>
                 </div>
-
                 <div class="col">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3917/3917805.png" alt="UV Icon">
-                    <div>
-                        <p id="uv-value">0</p>
-                        <p id="uv-level">Niedrig</p>
-                    </div>
+                    <img src="images/wind.png" alt="Windgeschwindigkeit">
+                    <div class="wind">-- km/h</div>
+                    <p>Wind</p>
                 </div>
-
                 <div class="col">
-                    <img src="https://cdn-icons-png.flaticon.com/512/4854/4854991.png" alt="Wind Icon">
-                    <div>
-                        <p class="wind">-- km/h</p>
-                        <p>Wind Speed</p>
-                    </div>
+                    <img src="images/uv.png" alt="UV Index">
+                    <div id="uv-value">--</div>
+                    <p>UV Index</p>
+                    <div id="uv-level">Normal</div>
                 </div>
             </div>
 
-            <!-- 7-Tage-Prognose -->
             <div class="forecast-container">
-                <h3>7-Tage-Prognose</h3>
+                <h3>7-Tage Prognose</h3>
                 <div class="forecast-list" id="forecast-list">
                 </div>
-            </div>   
-
+            </div>
         </div>
     </div>
 
     <script src="script.js"></script>
-    
 </body>
 </html>
