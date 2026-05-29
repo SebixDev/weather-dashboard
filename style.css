@@ -20,7 +20,6 @@
 }
 
 body {
-    background: var(--bg-gradient);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -28,28 +27,22 @@ body {
     color: var(--text-main);
     padding: 30px 20px;
     overflow-x: hidden;
-    transition: background 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 3. DYNAMISCHE WETTER-THEMEN */
-body.clear { 
-    --theme-accent: #ffaa00;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #e6a100 100%) !important;
-}
-body.clouds { 
-    --theme-accent: #a8b2bd;
-    background: linear-gradient(135deg, #141e30 0%, #243b55 100%) !important;
-}
-body.rain { 
-    --theme-accent: #0072ff;
-    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%) !important;
-}
-body.snow { 
-    --theme-accent: #70e1f5;
-    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%) !important;
+/* 3. DYNAMISCHER HINTERGRUND */
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    object-fit: cover;
 }
 
-/* 4. DASHBOARD */
+/* 4. DAS DASHBOARD */
 #app {
     background: var(--card-bg);
     backdrop-filter: blur(30px);
@@ -67,7 +60,6 @@ body.snow {
     position: relative;
 }
 
-/* Glow-Effekt */
 #app::before {
     content: '';
     position: absolute;
@@ -94,7 +86,6 @@ header h2 {
     background: linear-gradient(135deg, #ffffff 0%, var(--theme-accent) 100%);
     background-clip: text;
     -webkit-background-clip: text;
-    color: transparent;
     -webkit-text-fill-color: transparent;
 }
 
@@ -102,7 +93,7 @@ header h2 {
     grid-column: 1 / -1;
     display: flex;
     gap: 12px;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
     padding: 8px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -211,7 +202,7 @@ header h2 {
 }
 
 .col {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.03);
     padding: 20px 10px;
     border-radius: 20px;
@@ -224,7 +215,7 @@ header h2 {
 
 .col:hover {
     transform: scale(1.03);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .col img {
@@ -249,7 +240,6 @@ header h2 {
     margin-top: 2px;
 }
 
-/* Styling für UV-Label */
 #uv-level {
     font-size: 0.65rem;
     font-weight: 800;
@@ -282,7 +272,7 @@ header h2 {
 .forecast-item {
     flex: 1;
     min-width: 75px;
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.04);
     padding: 18px 10px;
     border-radius: 22px;
@@ -294,7 +284,7 @@ header h2 {
 
 .forecast-item:hover {
     transform: translateY(-6px);
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.3);
     border-color: rgba(255, 255, 255, 0.15);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
