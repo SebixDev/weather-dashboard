@@ -46,7 +46,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [x] Website moderner machen und Farben anpassen
 - [ ] Bei neuladen der Seite, neu laden verhindern
 
-Morgen (29.06.2026): Image Ordner erstellen und Bilder für Icons einfügen. Dynamische Hintergründe fixen. (Ordner erstellen für videos von Pixabay oder Pexels)
+Morgen (30.05.2026): Image Ordner erstellen und Bilder für Icons einfügen. (Ordner erstellen für videos von Pixabay oder Pexels)
 
 
 ---
