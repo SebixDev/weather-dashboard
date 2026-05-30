@@ -6,29 +6,7 @@ const searchInput = document.querySelector("#search-input");
 const searchButton = document.querySelector("#search-button");
 const weatherIcon = document.querySelector(".weather-icon");
 
-/* 2. HILFSFUNKTION UV-LEVEL */
-function updateUVLevel(uvIndex) {
-    const uvValueElement = document.querySelector("#uv-value");
-    const uvLevelElement = document.querySelector("#uv-level");
-    
-    uvValueElement.innerHTML = Math.round(uvIndex);
-
-    if (uvIndex <= 2) {
-        uvLevelElement.innerHTML = "Niedrig";
-        uvLevelElement.style.color = "#4fd64d";
-    } else if (uvIndex <= 5) {
-        uvLevelElement.innerHTML = "Mittel";
-        uvLevelElement.style.color = "#f7b733";
-    } else if (uvIndex <= 7) {
-        uvLevelElement.innerHTML = "Hoch";
-        uvLevelElement.style.color = "#fc4a1a";
-    } else {
-        uvLevelElement.innerHTML = "Sehr Hoch";
-        uvLevelElement.style.color = "#f800d2";
-    }
-}
-
-/* 3. HAUPTFUNKTION 7-TAGE PROGNOSE */
+/* 2. HAUPTFUNKTION 7-TAGE PROGNOSE */
 async function getForecast(city) {
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric&lang=de`;
     const forecastList = document.querySelector("#forecast-list");
@@ -46,8 +24,6 @@ async function getForecast(city) {
             const options = { weekday: 'short' };
             const dayName = date.toLocaleDateString('de-DE', options).toUpperCase();
 
-            const weatherMain = day.weather[0].main.toLowerCase();
-            
             const iconCode = day.weather[0].icon;
             const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
@@ -68,58 +44,63 @@ async function getForecast(city) {
     }
 }
 
-/* 4. HAUPTFUNKTION */
+/* 3. HAUPTFUNKTION */
 async function checkWeather(city) {
-    const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-    
-    if (response.status == 404) {
-        alert("Stadt nicht gefunden!");
-        return;
+    try {
+        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+        
+        if (response.status == 404 || response.status == 401) {
+            alert("Stadt nicht gefunden oder API-Key ungültig/noch nicht aktiv!");
+            return;
+        }
+
+        const data = await response.json();
+
+        // A: Texte
+        document.querySelector("#city-name").innerHTML = data.name;
+        document.querySelector("#temp-display").innerHTML = Math.round(data.main.temp) + "°C";
+        document.querySelector("#description").innerHTML = data.weather[0].description;
+        
+        document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+        document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+
+        document.querySelector("#uv-value").innerHTML = "1";
+        document.querySelector("#uv-level").innerHTML = "Normal";
+        document.querySelector("#uv-level").style.color = "#4fd64d";
+
+        // B: Wetter-Typ für Hintergrund-Video
+        const weatherMain = data.weather[0].main.toLowerCase();
+
+        // C: Hintergrund-Video & Haupt-Icon
+        const bgVideo = document.querySelector("#bg-video");
+
+        if (weatherMain === "clear") {
+            bgVideo.src = "images/clear.mp4";
+            weatherIcon.src = "images/clear.png";
+        } else if (weatherMain === "clouds") {
+            bgVideo.src = "images/clouds.mp4";
+            weatherIcon.src = "images/clouds.png";
+        } else if (weatherMain === "rain" || weatherMain === "drizzle") {
+            bgVideo.src = "images/rain.mp4";
+            weatherIcon.src = "images/rain.png";
+        } else if (weatherMain === "snow") {
+            bgVideo.src = "images/snow.mp4";
+            weatherIcon.src = "images/snow.png";
+        }
+        
+        // Video nach dem Wechsel
+        bgVideo.load();
+        bgVideo.play();
+
+        // 7-Tage-Prognose
+        getForecast(city);
+
+    } catch (error) {
+        console.error("Fehler beim Abrufen der Wetterdaten:", error);
     }
-
-    var data = await response.json();
-
-    // A: Texte füllen
-    document.querySelector("#city-name").innerHTML = data.name;
-    document.querySelector("#temp-display").innerHTML = Math.round(data.main.temp) + "°C";
-    document.querySelector("#description").innerHTML = data.weather[0].description;
-    
-    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-    document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
-
-    // UV-INDEX ABRUFEN
-    const lat = data.coord.lat;
-    const lon = data.coord.lon;
-    const uvResponse = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`);
-    const uvData = await uvResponse.json();
-    
-    updateUVLevel(uvData.list[0].main.aqi);
-
-    // B: Wetter-Typ
-    const weatherMain = data.weather[0].main.toLowerCase();
-
-    // C: Hintergrund & Haupt-Icon zurücksetzen
-    document.body.className = ""; 
-
-    if (weatherMain === "clear") {
-        document.body.classList.add("clear");
-        weatherIcon.src = "images/clear.png";
-    } else if (weatherMain === "clouds") {
-        document.body.classList.add("clouds");
-        weatherIcon.src = "images/clouds.png";
-    } else if (weatherMain === "rain" || weatherMain === "drizzle") {
-        document.body.classList.add("rain");
-        weatherIcon.src = "images/rain.png";
-    } else if (weatherMain === "snow") {
-        document.body.classList.add("snow");
-        weatherIcon.src = "images/snow.png";
-    }
-
-    // Prognose Stadt aufrufen
-    getForecast(city);
 }
 
-/* 5. EVENTS */
+/* 4. EVENTS */
 searchButton.addEventListener("click", () => {
     checkWeather(searchInput.value);
 });
