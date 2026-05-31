@@ -2,7 +2,7 @@
 
 Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeatherMap API abruft und das Design dynamisch an die Wetterlage anpasst.
 
-## 🚀 Funktionen (Stand 25.05.2026)
+## 🚀 Funktionen (Stand 31.06.2026)
 
 * **Echtzeit-Wetterdaten:** Abruf von Temperatur, Stadtname und Wetterbeschreibung über die OpenWeatherMap API.
 * **Dynamisches Design:** Der Hintergrund der Website ändert sich automatisch (Gradients) basierend auf der Wetterlage (z.B. sonnig, bewölkt, Regen).
@@ -31,22 +31,20 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [x] apiKey einfügen für Wetterdaten
 - [ ] Dynamische Hintergründe
 - [x] Wetter Icons hinzufügen
-- [ ] Detaillierte Wetter-Icons einbauen und verbessern (Link einbauen!)
 - [x] Vorhersage für die nächsten 7 Tage hinzufügen
 - [x] Standort-Autovervollständigung
 - [x] Readme.md verbessern und updaten sowie Design der Website an sich anpassen wie Abstände und Schriftgröße etc.
 - [x] Feuchtigkeits- & Wind-Anzeige
 - [x] Feuchtigkeits- & Wind-Anzeige Icons einfügen
-- [x] Icon-Ordner erstellen (siehe GMNI)
+- [ ] Icon-Ordner und Video Ordner erstellen (siehe GMNI) (Pixababy, Pexels)
 - [ ] Icons herunnterladen auf "Flaticon" und lokalen Ordner erstellen am PC.
 - [ ] Glas-Effekt als neues Designelement einbauen
 - [x] 7 Tage Prognose einbauen
-- [ ] 7 Tage Prognose verbessern und verschönern
-- [ ] UV-Index Daten hinzufügen
+- [x] 7 Tage Prognose verbessern und verschönern
+- [x] UV-Index Daten hinzufügen
 - [x] Website moderner machen und Farben anpassen
 - [ ] Bei neuladen der Seite, neu laden verhindern
 
-Morgen (30.05.2026): Image Ordner erstellen und Bilder für Icons einfügen. (Ordner erstellen für videos von Pixabay oder Pexels)
 
 
 ---
