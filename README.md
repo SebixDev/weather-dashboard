@@ -44,6 +44,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [x] UV-Index Daten hinzufügen
 - [x] Website moderner machen und Farben anpassen
 - [ ] Bei neuladen der Seite, neu laden verhindern
+- [ ] Zum Abschluss: CSS anpassen und letzte Verschönerungen
 
 
 
