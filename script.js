@@ -6,6 +6,35 @@ const searchInput = document.querySelector("#search-input");
 const searchButton = document.querySelector("#search-button");
 const weatherIcon = document.querySelector(".weather-icon");
 
+/* HELPER-FUNKTION CSS EFFEKTE */
+function createWeatherEffects(type) {
+    const effectsContainer = document.querySelector("#weather-bg-effects");
+    effectsContainer.innerHTML = "";
+
+    if (type === "rain") {
+        for (let i = 0; i < 40; i++) {
+            const drop = document.createElement("div");
+            drop.classList.add("rain-drop");
+            drop.style.left = Math.random() * 100 + "vw";
+            drop.style.animationDuration = (Math.random() * 0.5 + 0.5) + "s";
+            drop.style.animationDelay = Math.random() * 2 + "s";
+            effectsContainer.appendChild(drop);
+        }
+    } else if (type === "snow") {
+        for (let i = 0; i < 30; i++) {
+            const flake = document.createElement("div");
+            flake.classList.add("snowflake");
+            const size = Math.random() * 4 + 2 + "px";
+            flake.style.width = size;
+            flake.style.height = size;
+            flake.style.left = Math.random() * 100 + "vw";
+            flake.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            flake.style.animationDelay = Math.random() * 5 + "s";
+            effectsContainer.appendChild(flake);
+        }
+    }
+}
+
 /* 2. HAUPTFUNKTION 7-TAGE PROGNOSE */
 async function getForecast(city) {
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric&lang=de`;
@@ -50,7 +79,7 @@ async function checkWeather(city) {
         const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
         
         if (response.status == 404 || response.status == 401) {
-            alert("Stadt nicht gefunden oder API-Key ungültig/noch nicht aktiv!");
+            alert("Stadt nicht gefunden oder API-Key ungültig!");
             return;
         }
 
@@ -68,31 +97,30 @@ async function checkWeather(city) {
         document.querySelector("#uv-level").innerHTML = "Normal";
         document.querySelector("#uv-level").style.color = "#4fd64d";
 
-        // B: Wetter-Typ für Hintergrund-Video
+        // B: Wetter-Typ
         const weatherMain = data.weather[0].main.toLowerCase();
 
-        // C: Hintergrund-Video & Haupt-Icon
-        const bgVideo = document.querySelector("#bg-video");
+        // C: Klassen
+        document.body.className = ""; 
 
         if (weatherMain === "clear") {
-            bgVideo.src = "images/clear.mp4";
+            document.body.classList.add("clear");
             weatherIcon.src = "images/clear.png";
+            createWeatherEffects("clear");
         } else if (weatherMain === "clouds") {
-            bgVideo.src = "images/clouds.mp4";
+            document.body.classList.add("clouds");
             weatherIcon.src = "images/clouds.png";
+            createWeatherEffects("clouds");
         } else if (weatherMain === "rain" || weatherMain === "drizzle") {
-            bgVideo.src = "images/rain.mp4";
+            document.body.classList.add("rain");
             weatherIcon.src = "images/rain.png";
+            createWeatherEffects("rain");
         } else if (weatherMain === "snow") {
-            bgVideo.src = "images/snow.mp4";
+            document.body.classList.add("snow");
             weatherIcon.src = "images/snow.png";
+            createWeatherEffects("snow");
         }
-        
-        // Video nach dem Wechsel
-        bgVideo.load();
-        bgVideo.play();
 
-        // 7-Tage-Prognose
         getForecast(city);
 
     } catch (error) {
