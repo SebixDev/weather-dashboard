@@ -1,140 +1,55 @@
-/* 1. VARIABLEN */
-const apiKey = "9263dbbbc3a0428a395b63a63c646696";
-const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const apiKey = "6d69e4a86b97f02758252eb6f7df20b0";
+const searchInput = document.getElementById("city-input");
+const searchBtn = document.getElementById("search-btn");
+const weatherIcon = document.getElementById("weather-icon");
 
-const searchInput = document.querySelector("#search-input");
-const searchButton = document.querySelector("#search-button");
-const weatherIcon = document.querySelector(".weather-icon");
-
-/* HELPER-FUNKTION CSS EFFEKTE */
-function createWeatherEffects(type) {
-    const effectsContainer = document.querySelector("#weather-bg-effects");
-    effectsContainer.innerHTML = "";
-
-    if (type === "rain") {
-        for (let i = 0; i < 40; i++) {
-            const drop = document.createElement("div");
-            drop.classList.add("rain-drop");
-            drop.style.left = Math.random() * 100 + "vw";
-            drop.style.animationDuration = (Math.random() * 0.5 + 0.5) + "s";
-            drop.style.animationDelay = Math.random() * 2 + "s";
-            effectsContainer.appendChild(drop);
-        }
-    } else if (type === "snow") {
-        for (let i = 0; i < 30; i++) {
-            const flake = document.createElement("div");
-            flake.classList.add("snowflake");
-            const size = Math.random() * 4 + 2 + "px";
-            flake.style.width = size;
-            flake.style.height = size;
-            flake.style.left = Math.random() * 100 + "vw";
-            flake.style.animationDuration = (Math.random() * 3 + 2) + "s";
-            flake.style.animationDelay = Math.random() * 5 + "s";
-            effectsContainer.appendChild(flake);
-        }
-    }
-}
-
-/* 2. HAUPTFUNKTION 7-TAGE PROGNOSE */
-async function getForecast(city) {
-    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric&lang=de`;
-    const forecastList = document.querySelector("#forecast-list");
-    
-    forecastList.innerHTML = "";
-
-    try {
-        const response = await fetch(forecastUrl);
-        const data = await response.json();
-
-        const dailyData = data.list.filter(item => item.dt_txt.includes("12:00:00"));
-
-        dailyData.forEach(day => {
-            const date = new Date(day.dt * 1000);
-            const options = { weekday: 'short' };
-            const dayName = date.toLocaleDateString('de-DE', options).toUpperCase();
-
-            const iconCode = day.weather[0].icon;
-            const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
-
-            const forecastItem = document.createElement("div");
-            forecastItem.classList.add("forecast-item");
-
-            forecastItem.innerHTML = `
-                <p class="forecast-day">${dayName}</p>
-                <img src="${iconUrl}" alt="Wetter">
-                <p class="forecast-temp">${Math.round(day.main.temp)}°C</p>
-            `;
-
-            forecastList.appendChild(forecastItem);
-        });
-
-    } catch (error) {
-        console.error("Fehler beim Laden der Prognose:", error);
-    }
-}
-
-/* 3. HAUPTFUNKTION */
 async function checkWeather(city) {
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apiKey}&lang=de`;
+    
     try {
-        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-        
-        if (response.status == 404 || response.status == 401) {
-            alert("Stadt nicht gefunden oder API-Key ungültig!");
-            return;
-        }
-
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error("Stadt nicht gefunden");
         const data = await response.json();
 
-        // A: Texte
-        document.querySelector("#city-name").innerHTML = data.name;
-        document.querySelector("#temp-display").innerHTML = Math.round(data.main.temp) + "°C";
-        document.querySelector("#description").innerHTML = data.weather[0].description;
-        
-        document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-        document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+        // Daten in HTML-Element
+        document.getElementById("city-name").innerText = data.name;
+        document.getElementById("temp-display").innerText = Math.round(data.main.temp) + "°C";
+        document.getElementById("description").innerText = data.weather[0].description;
+        document.querySelector(".humidity").innerText = data.main.humidity + "%";
+        document.querySelector(".wind").innerText = Math.round(data.wind.speed) + " km/h";
 
-        document.querySelector("#uv-value").innerHTML = "1";
-        document.querySelector("#uv-level").innerHTML = "Normal";
-        document.querySelector("#uv-level").style.color = "#4fd64d";
+        // Hintergrund-Klassen zurücksetzen
+        document.body.className = "";
 
-        // B: Wetter-Typ
-        const weatherMain = data.weather[0].main.toLowerCase();
-
-        // C: Klassen
-        document.body.className = ""; 
-
-        if (weatherMain === "clear") {
-            document.body.classList.add("clear");
+        // HINTERGRUND-BILDER ABGEFRAGT
+        if (data.weather[0].main == "Clear") {
             weatherIcon.src = "images/clear.png";
-            createWeatherEffects("clear");
-        } else if (weatherMain === "clouds") {
-            document.body.classList.add("clouds");
+            document.body.classList.add("clear");
+        } else if (data.weather[0].main == "Clouds") {
             weatherIcon.src = "images/clouds.png";
-            createWeatherEffects("clouds");
-        } else if (weatherMain === "rain" || weatherMain === "drizzle") {
-            document.body.classList.add("rain");
+            document.body.classList.add("clouds");
+        } else if (data.weather[0].main == "Rain" || data.weather[0].main == "Drizzle") {
             weatherIcon.src = "images/rain.png";
-            createWeatherEffects("rain");
-        } else if (weatherMain === "snow") {
-            document.body.classList.add("snow");
+            document.body.classList.add("rain");
+        } else if (data.weather[0].main == "Snow") {
             weatherIcon.src = "images/snow.png";
-            createWeatherEffects("snow");
+            document.body.classList.add("snow");
         }
-
-        getForecast(city);
 
     } catch (error) {
         console.error("Fehler beim Abrufen der Wetterdaten:", error);
     }
 }
 
-/* 4. EVENTS */
-searchButton.addEventListener("click", () => {
-    checkWeather(searchInput.value);
+// Event-Listener Suche
+searchBtn.addEventListener("click", () => {
+    if (searchInput.value.trim() !== "") {
+        checkWeather(searchInput.value);
+    }
 });
 
-searchInput.addEventListener("keypress", (event) => {
-    if (event.key === "Enter") {
+searchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && searchInput.value.trim() !== "") {
         checkWeather(searchInput.value);
     }
 });
