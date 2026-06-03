@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Wetter Dashboard</title>
+    <title>Wetter Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,21 +11,22 @@
     <div id="weather-bg-effects"></div>
 
     <div id="app">
+        
         <header>
-            <h2>Wetter Vorhersage</h2>
+            <h2>Wetter</h2>
         </header>
 
         <div class="search-box">
-            <input type="text" id="search-input" placeholder="Stadt eingeben..." spellcheck="false">
-            <button id="search-button">Suchen</button>
+            <input type="text" id="city-input" placeholder="Stadt eingeben..." autocomplete="off">
+            <button id="search-btn">Suchen</button>
         </div>
 
-        <main class="main-weather">
-            <img src="images/clear.png" class="weather-icon" alt="Wetter Zustand">
-            <h1 id="city-name">Stadt</h1>
-            <h2 id="temp-display">--°C</h2>
-            <p id="description">Lade...</p>
-        </main>
+        <div class="main-weather">
+            <img src="images/clear.png" class="weather-icon" id="weather-icon" alt="Wetter Icon">
+            <h1 id="temp-display">--°C</h1>
+            <h2 id="city-name">--</h2>
+            <p id="description">--</p>
+        </div>
 
         <div class="right-content">
             <div class="details">
@@ -53,8 +54,7 @@
                     </div>
             </div>
         </div>
-    </div>
 
-    <script src="script.js"></script>
+    </div> <script src="script.js"></script>
 </body>
 </html>
