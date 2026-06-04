@@ -2,7 +2,7 @@
 
 Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeatherMap API abruft und das Design dynamisch an die Wetterlage anpasst.
 
-## 🚀 Funktionen (Stand 03.06.2026)
+## 🚀 Funktionen (Stand 04.06.2026)
 
 * **Echtzeit-Wetterdaten:** Abruf von Temperatur, Stadtname und Wetterbeschreibung über die OpenWeatherMap API.
 * **Dynamisches Design:** Der Hintergrund der Website ändert sich automatisch (Gradients) basierend auf der Wetterlage (z.B. sonnig, bewölkt, Regen).
@@ -42,8 +42,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [x] 7 Tage Prognose verbessern und verschönern
 - [x] UV-Index Daten hinzufügen
 - [x] Website moderner machen und Farben anpassen
-- [ ] Bei neuladen der Seite, neu laden verhindern
-- [ ] Zum Abschluss: CSS anpassen und letzte Verschönerungen
+- [ ] Zum Abschluss: CSS anpassen und letzte Verschönerungen, Anmiationen für Dynamischen HIntergrund besser machen
 
 
 
