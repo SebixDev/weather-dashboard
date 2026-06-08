@@ -42,9 +42,7 @@ Ein modernes, interaktives Wetter-Dashboard, das Echtzeitdaten von der OpenWeath
 - [x] 7 Tage Prognose verbessern und verschönern
 - [x] UV-Index Daten hinzufügen
 - [x] Website moderner machen und Farben anpassen
-- [ ] Zum Abschluss: GITHUB Bilder veröffentlichen
-
 
 
 ---
-*Erstellt als Teil ein Lern-Projekts.*
+*Erstellt als Teil eines Lern-Projekts.*
